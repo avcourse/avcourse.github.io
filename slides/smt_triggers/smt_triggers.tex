@@ -339,11 +339,11 @@
 
     \begin{frame}{Пример}
     \begin{itemize}
-    \item Например, для квантора \texttt{forall x y. (x > y) -> (f (h y) x)}
+    \item Например, для квантора \texttt{forall x y. (x + y > 0) -> (f (h y) x) + x < 2}
     таким термом является \texttt{(f (h y) x)}.
-    \item Терм \texttt{forall x y. (x > y) -> (f (h y) x)} не является
+    \item Терм \texttt{(f (h y) x) + x} не является
     минимальным.
-    \item В терм \texttt{x > y} не входит пользовательский символ.
+    \item В терм \texttt{x + y} не входит пользовательский символ.
     \item В терм \texttt{(h y)} не входят все подкванторные переменные.
     \end{itemize}
     \end{frame}
@@ -354,11 +354,11 @@
     Солвер \textsl{Alt-Ergo} позволяет понять, какой триггер он выбрал
     для квантора и как он его использовал.
     \item
-    \texttt{alt-ergo -{}-dtriggers input.ae} распечатывает
+    \texttt{alt-ergo -d triggers input.ae} распечатывает
     автоматически сгенерированные триггеры
     \item
-    \texttt{alt-ergo -{}-dmatching=1 input.ae} распечатывает
-    кванторы, которые были инстанцированы (вместо 1 можно написать 2 для
+    \texttt{alt-ergo -d matching input.ae} распечатывает
+    кванторы, которые были инстанцированы (вместо -d можно написать -{}-dd для
             более подробного вывода)
     \item
     Файл \texttt{input.ae} можно получить из Why3IDE: кнопка Edit
